@@ -8,5 +8,5 @@
     shortTitle="Content Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="demo/components/global/page/contentpage"/>
+        sling:resourceType="rosetta/components/global/page/contentpage"/>
 </jcr:root>

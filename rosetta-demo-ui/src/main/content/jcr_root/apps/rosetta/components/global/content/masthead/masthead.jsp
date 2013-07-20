@@ -9,7 +9,7 @@
     	/><cq:include script="../utils/render.logo.jsp" />
     </div>
     <c:if test="${ currentStyle.showSearchbox }">
-      <cq:include path="search" resourceType="demo/components/global/content/search"/>
+      <cq:include path="search" resourceType="rosetta/components/global/content/search"/>
     </c:if>
     <div class="primary-logo">
     	<c:set scope="request" var="logoName" value="primaryLogo"
