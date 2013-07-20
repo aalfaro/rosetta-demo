@@ -49,9 +49,12 @@
 					<targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
 					<filters>
 						<filter>
+						    <mode>replace</mode>
 							<root>/apps/rosetta</root>
+						</filter>
+						<filter>
+						    <mode>replace</mode>
 							<root>/etc/designs/rosetta</root>
-							<root>/etc/scaffolding/rosetta</root>
 						</filter>
 					</filters>
 					<embeddeds>
