@@ -1,6 +1,38 @@
-*.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+###########################
+# Eclipse generated files #
+###########################
+.project
+.classpath
+.settings
+.checkstyle
+
+#####################
+# CQ5 related files #
+#####################
+.vlt
+
+#########################
+# Maven generated files #
+#########################
+target/
+
+######################
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+##########################
+# soapUI generated files #
+##########################
+soapui*.log
+global-groovy.log
+
+###########################
+# Other unnecessary files #
+###########################
+.svn
+derby.log

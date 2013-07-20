@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+	<modelVersion>4.0.0</modelVersion>
+	<name>ROSETTA DEMO UI BusinessLogic</name>
+	<artifactId>rosetta-demo-ui-businesslogic</artifactId>
+	<packaging>bundle</packaging>
+  
+	<parent>
+		<groupId>com.rosetta.demo</groupId>
+		<artifactId>rosetta-demo-pom-osgi</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../rosetta-demo-pom-osgi/pom.xml</relativePath>
+	</parent>  
+  
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<!-- bundle meta information -->
+						<Bundle-Name>ROSETTA DEMO UI Business Logic</Bundle-Name>
+						<Bundle-Description>ROSETTA DEMO UI Business Logic Classes</Bundle-Description>
+						<!-- bundle dependencies -->
+						<Export-Package>com.rosetta.demo.bl.*</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.jcr.api</artifactId>
+			<version>2.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.api</artifactId>
+			<version>2.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-tagging</artifactId>
+			<version>5.4.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-search</artifactId>
+			<version>5.5.4</version>
+			<scope>provided</scope>
+		</dependency>	         
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.commons.json</artifactId>
+			<version>2.0.6</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rosetta-demo-common</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-mailer</artifactId>
+			<version>5.4.0</version>
+			<scope>provided</scope>
+		</dependency>		
+	</dependencies>
+  
+</project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>dev-support</artifactId>
+	<name>ROSETTA DEMO Dev Support Artifacts</name>
+	<description>Dev supporting scripts and one-off processes</description>
+
+	<parent>
+		<groupId>com.rosetta.demo</groupId>
+		<artifactId>rosetta-demo-root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	
+	<properties>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/</directory>
+			</resource>
+		</resources>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin-version}</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<maxmem>512M</maxmem>
+						<!-- Change from false to true to avoid the need of MAVEN_OPTS, if 
+							we don't need a performance test is ok -->
+						<fork>true</fork>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

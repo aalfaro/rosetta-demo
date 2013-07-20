@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>rosetta-demo-ui</artifactId>
+	<name>ROSETTA DEMO UI</name>
+	<packaging>content-package</packaging>
+	<description>DEMO Day CQ application</description>
+
+	<parent>
+		<groupId>com.rosetta.demo</groupId>
+		<artifactId>rosetta-demo-pom-build</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../rosetta-demo-pom-build/pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<crx.host>localhost</crx.host>
+		<crx.port>4502</crx.port>
+	</properties>
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/content/jcr_root</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/.vlt</exclude>
+					<exclude>**/.vltignore</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<includeEmptyDirs>true</includeEmptyDirs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.day.jcr.vault</groupId>
+				<artifactId>content-package-maven-plugin</artifactId>
+				<version>0.0.18</version>
+				<extensions>true</extensions>
+				<configuration>
+					<name>rosetta-demo-ui</name>
+					<group>ROSETTA</group>
+					<failOnError>true</failOnError>
+					<targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
+					<filters>
+						<filter>
+							<root>/apps/rosetta</root>
+							<root>/etc/designs/rosetta</root>
+							<root>/etc/scaffolding/rosetta</root>
+						</filter>
+					</filters>
+					<embeddeds>
+						<embedded>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>rosetta-demo-common</artifactId>
+							<target>/apps/rosetta/install</target>
+						</embedded>
+						<embedded>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>rosetta-demo-ui-businesslogic</artifactId>
+							<target>/apps/rosetta/install</target>
+						</embedded>
+					</embeddeds>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<!-- enable the "-P deploy" profile to auto-deploy the UI package to the configured CRX host:port -->
+							<goal>package</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>deploy</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.day.jcr.vault</groupId>
+						<artifactId>content-package-maven-plugin</artifactId>
+						<executions>
+		  					<execution>
+								<id>install-package</id>
+								<goals>
+			  						<goal>install</goal>
+								</goals>
+			  				</execution>
+						</executions>
+	  				</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rosetta-demo-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rosetta-demo-ui-businesslogic</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

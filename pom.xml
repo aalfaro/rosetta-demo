@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.rosetta.demo</groupId>
+	<artifactId>rosetta-demo-root</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ROSETTA DEMO Root</name>
+	<packaging>pom</packaging>
+	<inceptionYear>2013</inceptionYear>
+
+	<modules>
+		<module>dev-support</module>
+		<module>rosetta-demo-pom-build</module>
+		<module>rosetta-demo-pom-osgi</module>
+		<module>rosetta-demo-common</module>
+		<module>rosetta-demo-ui-businesslogic</module>
+		<module>rosetta-demo-ui</module>
+	</modules>
+
+	<properties>
+		<git-repo-name>MYPROJECT</git-repo-name>
+		<jira-project-key>MYPROJECT</jira-project-key>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	
+	<!--
+	<issueManagement>
+		<system>Jira</system>
+		<url>https://jira.mycompany.com/browse/${jira-project-key}</url>
+	</issueManagement>
+
+	<developers>
+		<developer>
+			<name>CQ Coder</name>
+			<email>cqcoder@mycompany.com</email>
+			<organization>MyCompany</organization>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<developerConnection>scm:git:https://git.mycompany.com/git/${git-repo-name}</developerConnection>
+		<connection>scm:git:https://git.mycompany.com/git/${git-repo-name}</connection>
+		<url>https://git.mycompany.com/git/${git-repo-name}</url>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>artifactory.mycompany.com</id>
+			<name>artifactory.mycompany.com-releases</name>
+			<url>http://artifactory.mycompany.com/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>artifactory.mycompany.com</id>
+			<name>artifactory.mycompany.com-snapshots</name>
+			<url>http://artifactory.mycompany.com/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+	-->
+	
+	<repositories>
+	    <repository>
+			<id>adobe-public-releases</id>
+			<name>Adobe Public Repository</name>
+			<url>http://repo.adobe.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	    <!--
+		<repository>
+			<id>artifactory-release</id>
+			<name>Artifactory Libs Release</name>
+			<url>http://artifactory.mycompany.com/artifactory/libs-release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>artifactory-snapshot</id>
+			<name>Artifactory Libs Snapshot</name>
+			<url>http://artifactory.mycompany.com/artifactory/libs-snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		-->
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>adobe-public-releases</id>
+			<name>Adobe Public Repository</name>
+			<url>http://repo.adobe.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<!--
+        <pluginRepository>
+			<id>artifactory-release</id>
+			<name>Artifactory Plugins Release</name>
+			<url>http://artifactory.mycompany.com/artifactory/plugins-release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
+			<id>artifactory-snapshot</id>
+			<name>Artifactory Plugins Snapshot</name>
+			<url>http://artifactory.mycompany.com/artifactory/plugins-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		-->
+	</pluginRepositories>
+	
+</project>

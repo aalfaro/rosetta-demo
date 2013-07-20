@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>sling</artifactId>
+        <version>11</version>
+        <relativePath>../../../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>org.apache.sling.fragment.xml-jre-1.6</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>Apache Sling System Bundle Extension: XML APIs for JRE 1.6</name>
+    <description>
+        Adds the XML API packages to the system bundle exports.
+        The list of packages is derived from the packages available
+        in the Java 6 platform. To use more recent XML APIs either
+        modify this bundle to also export those package from the
+        platform or install respective API bundles.
+    </description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <instructions>
+                        <Fragment-Host>
+                            system.bundle;extension:=framework
+                        </Fragment-Host>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <forceCreation>true</forceCreation>
+                    <archive>
+                        <manifestFile>
+                            ${project.build.outputDirectory}/META-INF/MANIFEST.MF
+                        </manifestFile>
+                        <manifestEntries>
+                            <Export-Package>
+                                com.sun.xml.internal.ws.api,
+                                com.sun.xml.internal.ws.api.message,
+                                com.sun.xml.internal.bind.v2,
+                                com.sun.xml.wss,
+                                com.sun.xml.wss.impl,
+                                com.sun.xml.wss.impl.callback,
+                                javax.activation;version=1.1.1,
+                                javax.validation,
+                                javax.xml,
+                                javax.xml.bind,
+                                javax.xml.bind.annotation,
+                                javax.xml.bind.annotation.adapters,
+                                javax.xml.bind.attachment,
+                                javax.xml.bind.helpers,
+                                javax.xml.bind.util,
+                                javax.xml.crypto,
+                                javax.xml.crypto.dom,
+                                javax.xml.crypto.dsig,
+                                javax.xml.crypto.dsig.dom,
+                                javax.xml.crypto.dsig.keyinfo,
+                                javax.xml.crypto.dsig.spec,
+                                javax.xml.datatype,
+                                javax.xml.namespace,
+                                javax.xml.parsers,
+                                javax.xml.soap,
+                                javax.xml.stream;version=1.0.1,
+                                javax.xml.stream.events;version=1.0.1,
+                                javax.xml.stream.util;version=1.0.1,
+                                javax.xml.transform,
+                                javax.xml.transform.dom,
+                                javax.xml.transform.sax,
+                                javax.xml.transform.stax,
+                                javax.xml.transform.stream,
+                                javax.xml.validation,
+                                javax.xml.ws,
+                                javax.xml.ws.handler,
+                                javax.xml.ws.handler.soap,
+                                javax.xml.ws.http,
+                                javax.xml.ws.soap,
+                                javax.xml.ws.spi,
+                                javax.xml.ws.wsaddressing,
+                                javax.xml.xpath,
+                                org.apache.commons.dbcp,
+                                org.apache.xerces,
+                                org.apache.xerces.jaxp,
+                                org.w3c.dom,
+                                org.w3c.dom.bootstrap,
+                                org.w3c.dom.css,
+                                org.w3c.dom.events,
+                                org.w3c.dom.html,
+                                org.w3c.dom.ls,
+                                org.w3c.dom.ranges,
+                                org.w3c.dom.stylesheets,
+                                org.w3c.dom.traversal,
+                                org.w3c.dom.views,
+                                org.w3c.dom.xpath,
+                                org.xml.sax,
+                                org.xml.sax.ext,
+                                org.xml.sax.helpers
+                            </Export-Package>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.sling</groupId>
+              <artifactId>maven-sling-plugin</artifactId>
+              <version>2.0.4-incubator</version>
+              <configuration>
+                <slingUrl>http://localhost:8080/system/console</slingUrl>
+                <user>admin</user>
+                <password>admin</password>
+              </configuration>
+              <executions>
+                <!-- validate JSON files -->
+                <execution>
+                  <id>validate-bundle</id>
+                  <goals>
+                    <goal>validate</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

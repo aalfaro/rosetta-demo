@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    activeTab="{Long}0"
+    title="Logo (Design)"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <logoconfigs
+            jcr:primaryType="cq:Widget"
+            title="Logo Config"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <resTypePrimaryLogo
+                    jcr:primaryType="cq:Widget"
+                    ignoreData="true"
+                    name="./primaryLogo/sling:resourceType"
+                    value="foundation/components/image"
+                    xtype="hidden"/>
+                <primaryLogoConfigs
+                    jcr:primaryType="cq:Widget"
+                    title="Primary Logo configuration"
+                    xtype="fieldset">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <alt2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo Alt Text"
+                            name="./logoAlt"
+                            width="250"
+                            xtype="textfield"/>
+                        <logoTitle2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo Link Title"
+                            name="./logoTitle"
+                            width="250"
+                            xtype="textfield"/>
+                        <logoURL2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo URL"
+                            name="./logoURL"
+                            width="250"
+                            xtype="pathfield"/>
+                    </items>
+                </primaryLogoConfigs>
+                <resTypeSecondaryLogo
+                    jcr:primaryType="cq:Widget"
+                    ignoreData="true"
+                    name="./secondaryLogo/sling:resourceType"
+                    value="foundation/components/image"
+                    xtype="hidden"/>
+                <secondaryLogoConfigs
+                    jcr:primaryType="cq:Widget"
+                    title="Seconary Logo configuration"
+                    xtype="fieldset">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <alt2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo Alt Text"
+                            name="./logoAlt2"
+                            width="250"
+                            xtype="textfield"/>
+                        <logoTitle2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo Link Title"
+                            name="./logoTitle2"
+                            width="250"
+                            xtype="textfield"/>
+                        <logoURL2
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Logo URL"
+                            name="./logoURL2"
+                            width="250"
+                            xtype="pathfield"/>
+                    </items>
+                </secondaryLogoConfigs>
+            </items>
+        </logoconfigs>
+        <primaryLogo
+            jcr:primaryType="cq:Widget"
+            cropParameter="./primaryLogo/imageCrop"
+            ddGroups="[media]"
+            fieldLabel="Logo Image"
+            fileNameParameter="./primaryLogo/fileName"
+            fileReferenceParameter="./primaryLogo/fileReference"
+            mapParameter="./primaryLogo/imageMap"
+            name="./primaryLogo/file"
+            requestSuffix="/primaryLogo.img.png"
+            rotateParameter="./primaryLogo/imageRotate"
+            sizeLimit="100"
+            title="Primary Logo"
+            uploadUrl="/tmp/upload/*"
+            xtype="smartimage"/>
+        <secondaryLogo
+            jcr:primaryType="cq:Widget"
+            cropParameter="./secondaryLogo/imageCrop"
+            ddGroups="[media]"
+            fieldLabel="Logo Image"
+            fileNameParameter="./secondaryLogo/fileName"
+            fileReferenceParameter="./secondaryLogo/fileReference"
+            mapParameter="./secondaryLogo/imageMap"
+            name="./secondaryLogo/file"
+            requestSuffix="/secondaryLogo.img.png"
+            rotateParameter="./secondaryLogo/imageRotate"
+            sizeLimit="100"
+            title="Secondary Logo"
+            uploadUrl="/tmp/upload/*"
+            xtype="smartimage"/>
+        <searchOptions
+            jcr:primaryType="cq:Widget"
+            title="Search Options"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <showSearchbox
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Show Searchbox"
+                    name="./showSearchbox"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </searchOptions>
+    </items>
+</jcr:root>

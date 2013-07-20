@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="footer-dialog"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <Links
+                jcr:primaryType="cq:Panel"
+                title="Links">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <urls
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Click the '+' to add a new page"
+                        fieldLabel="Pages"
+                        name="./urls"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            width="155"
+                            xtype="pathfield"/>
+                    </urls>
+                    <disclaimer
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Disclaimer"
+                        name="./disclaimer"
+                        xtype="textfield"/>
+                    <copyrightyear
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Copyrightyear"
+                        name="./copyrightyear"
+                        xtype="textfield"/>
+                </items>
+            </Links>
+        </items>
+    </items>
+</jcr:root>
