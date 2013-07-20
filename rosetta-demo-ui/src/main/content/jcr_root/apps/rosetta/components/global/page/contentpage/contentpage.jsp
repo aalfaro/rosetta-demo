@@ -1,4 +1,4 @@
-<%@include file="/apps/demo/components/global/global.jsp" %><%
+<%@include file="/apps/rosetta/components/global/global.jsp" %><%
 
     // read the redirect target from the 'page properties' and perform the
     // redirect if WCM is disabled.

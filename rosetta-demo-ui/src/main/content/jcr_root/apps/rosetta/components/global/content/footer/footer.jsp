@@ -1,4 +1,4 @@
-<%@include file="/apps/demo/components/global/global.jsp" %>
+<%@include file="/apps/rosetta/components/global/global.jsp" %>
 
 <div class="row">
   <div class="footer-col column grid-12">

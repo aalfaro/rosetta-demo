@@ -1,4 +1,4 @@
-<%@include file="/apps/demo/components/global/global.jsp" %>
+<%@include file="/apps/rosetta/components/global/global.jsp" %>
 <%
 String searchIn = currentStyle.get("searchIn", "");
 String location = PageUtils.getResolvedPath(currentStyle.get("resultsURL", ""), "#", slingRequest, pageContext);
