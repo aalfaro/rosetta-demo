@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter vesion="1.0">
+	<filter root="/apps/rosetta" />
+	<filter root="/etc/designs/rosetta" />
+</workspaceFilter>
