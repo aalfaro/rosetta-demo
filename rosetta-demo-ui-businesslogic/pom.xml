@@ -14,6 +14,7 @@
 	</parent>  
   
 	<build>
+	    <finalName>../../rosetta-demo-ui/src/main/content/jcr_root/apps/rosetta/install/${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
