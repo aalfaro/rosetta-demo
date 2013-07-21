@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <Configuration
+                jcr:primaryType="cq:Panel"
+                title="Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <topCatURL
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="http://localhost/wcs/resources/store/10152/categoryview/@top"
+                        fieldLabel="Top Categories URL"
+                        name="./topCatURL"
+                        xtype="textfield"/>
+                </items>
+            </Configuration>
+        </items>
+    </items>
+</jcr:root>

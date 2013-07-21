@@ -1,4 +1,4 @@
-package com.rosetta.demo.components.categorie.entity;
+package com.rosetta.demo.components.category.entity;
 
 public class Category {
 	
