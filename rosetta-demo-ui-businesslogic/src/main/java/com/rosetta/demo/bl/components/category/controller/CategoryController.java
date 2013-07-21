@@ -1,4 +1,4 @@
-package com.rosetta.demo.components.category.controller;
+package com.rosetta.demo.bl.components.category.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,8 +16,8 @@ import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.rosetta.demo.components.category.entity.Category;
-import com.rosetta.demo.components.generic.entity.GenericConfiguration;
+import com.rosetta.demo.bl.components.category.entity.Category;
+import com.rosetta.demo.bl.components.generic.entity.GenericConfiguration;
 
 public class CategoryController {
 	

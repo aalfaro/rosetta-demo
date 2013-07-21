@@ -1,10 +1,10 @@
 <%@include file="/apps/rosetta/components/global/global.jsp" %>
 
-<%@page import="com.rosetta.demo.components.generic.entity.GenericConfiguration, 
-                com.rosetta.demo.components.category.entity.Category" %>
+<%@page import="com.rosetta.demo.bl.components.generic.entity.GenericConfiguration, 
+                com.rosetta.demo.bl.components.category.entity.Category" %>
 
-<jsp:useBean id="categoryController" class="com.rosetta.demo.components.category.controller.CategoryController"></jsp:useBean>
-<jsp:useBean id="genericConfiguration" class="com.rosetta.demo.components.generic.entity.GenericConfiguration">
+<jsp:useBean id="categoryController" class="com.rosetta.demo.bl.components.category.controller.CategoryController"></jsp:useBean>
+<jsp:useBean id="genericConfiguration" class="com.rosetta.demo.bl.components.generic.entity.GenericConfiguration">
     <jsp:setProperty name="genericConfiguration" property="request" value="<%= request %>" />
     <jsp:setProperty name="genericConfiguration" property="page" value="<%= currentPage %>" />
     <jsp:setProperty name="genericConfiguration" property="resolver" value="<%= resourceResolver %>" />

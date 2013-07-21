@@ -1,4 +1,4 @@
-package com.rosetta.demo.components.generic.entity;
+package com.rosetta.demo.bl.components.generic.entity;
 
 import javax.servlet.jsp.PageContext;
 
@@ -16,6 +16,7 @@ import com.day.cq.wcm.api.designer.Style;
  * Generic configuration class for the UI components.
  */
 public class GenericConfiguration {
+	
 
 	/**
 	 * SlingHttpServletRequest reference.
