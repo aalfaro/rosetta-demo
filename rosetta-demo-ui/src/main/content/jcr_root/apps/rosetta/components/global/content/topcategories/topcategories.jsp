@@ -3,8 +3,8 @@
 <%@page import="com.rosetta.demo.components.generic.entity.GenericConfiguration, 
                 com.rosetta.demo.components.category.entity.Category" %>
 
-<jsp:useBean id="categoryController" class="com.panasonic.global.bl.components.specifications.controller.IconSpecsController"></jsp:useBean>
-<jsp:useBean id="genericConfiguration" class="com.panasonic.global.bl.components.specifications.entity.SpecsConfiguration">
+<jsp:useBean id="categoryController" class="com.rosetta.demo.components.category.controller.CategoryController"></jsp:useBean>
+<jsp:useBean id="genericConfiguration" class="com.rosetta.demo.components.generic.entity.GenericConfiguration">
     <jsp:setProperty name="genericConfiguration" property="request" value="<%= request %>" />
     <jsp:setProperty name="genericConfiguration" property="page" value="<%= currentPage %>" />
     <jsp:setProperty name="genericConfiguration" property="resolver" value="<%= resourceResolver %>" />
@@ -14,7 +14,7 @@
 </jsp:useBean>
 
 <c:set var="isEditMode" value="<%= (WCMMode.fromRequest(request) == WCMMode.EDIT || WCMMode.fromRequest(request) == WCMMode.DESIGN) %>" />
-<c:set var="topCategories" value="<%= categoryController.getSpecs(genericConfiguration) %>" />
+<c:set var="topCategories" value="<%= categoryController.getTopCategories(genericConfiguration) %>" />
 
 <c:choose>
 	<c:when test="${not empty topCategories}">

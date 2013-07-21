@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.sling.commons.json.JSONArray;
@@ -23,6 +22,14 @@ import com.rosetta.demo.components.generic.entity.GenericConfiguration;
 public class CategoryController {
 	
 	private static final Logger log = LoggerFactory.getLogger(CategoryController.class);
+
+	
+	/**
+	 * 
+	 */
+	public CategoryController() {
+		super();
+	}
 
 	/**
 	 * Method to get the top categories.
