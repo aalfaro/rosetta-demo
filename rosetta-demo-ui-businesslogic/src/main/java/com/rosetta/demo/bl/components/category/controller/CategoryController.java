@@ -41,11 +41,11 @@ public class CategoryController {
 	 * @return List with the top categories
 	 */
 	public List<Category> getTopCategories(GenericConfiguration configuration) {
+		
+		String url = configuration.getProperties().get("topCatURL", "http://localhost/wcs/resources/store/10152/categoryview/@top");
+		int timeout = 5000;
 
 		List<Category> topCategories = new ArrayList<Category>();
-		
-		String url = "http://localhost/wcs/resources/store/10152/categoryview/@top";
-		int timeout = 5000;
 		
 		String json = getJSON(url, timeout);
 		System.out.println("json : " + json);
