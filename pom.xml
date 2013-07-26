@@ -15,6 +15,7 @@
 		<module>rosetta-demo-pom-osgi</module>
 		<module>rosetta-demo-common</module>
 		<module>rosetta-demo-workflow</module>
+		<module>rosetta-demo-helloworld</module>
 		<module>rosetta-demo-ui-businesslogic</module>
 		<module>rosetta-demo-ui</module>
 	</modules>
