@@ -73,7 +73,7 @@ public class ContentExporterServlet extends SlingAllMethodsServlet {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter pw = response.getWriter();
 		pw.print("This is a CQ5 Response ... ");
-		pw.print(getPageContent(request, "/content/helloworld.html"));
+		pw.print(getPageContent(request, "/content/helloworld"));
 		pw.flush();
 		pw.close();
 	}
