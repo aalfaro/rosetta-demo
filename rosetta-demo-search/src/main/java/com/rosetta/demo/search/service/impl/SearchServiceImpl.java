@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.DamConstants;
-import com.day.cq.dam.handler.standard.pdf.PdfHandler;
 import com.day.cq.search.Predicate;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
@@ -62,9 +61,9 @@ public class SearchServiceImpl implements SearchService {
 
 		// add filter to show only asset type pdf or word
 		queryMap.put("group.2_group.property", ASSET_FORMAT_PROPERTY);
-		queryMap.put("group.2_group.property.1_value", PdfHandler.CONTENT_MIMETYPE);
-		queryMap.put("group.2_group.property.2_value", WORD_FORMAT);
-		queryMap.put("group.2_group.property.3_value", WORDX_FORMAT);
+		queryMap.put("group.2_group.property.1_value", WORD_FORMAT);
+		queryMap.put("group.2_group.property.2_value", WORDX_FORMAT);
+		// queryMap.put("group.2_group.property.3_value", PdfHandler.CONTENT_MIMETYPE);
 
 		// add paths where to look for
 		queryMap.put("2_group.p.or", "true");
