@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<name>ROSETTA DEMO Services</name>
-	<artifactId>rosetta-demo-services</artifactId>
+	<name>ROSETTA DEMO Search</name>
+	<artifactId>rosetta-demo-search</artifactId>
 	<packaging>bundle</packaging>
 
 	<parent>
@@ -23,10 +23,10 @@
 				<configuration>
 					<instructions>
 						<!-- bundle meta information -->
-						<Bundle-Name>ROSETTA DEMO Services</Bundle-Name>
-						<Bundle-Description>ROSETTA DEMO Services Classes</Bundle-Description>
+						<Bundle-Name>ROSETTA DEMO Search</Bundle-Name>
+						<Bundle-Description>ROSETTA DEMO Search Classes</Bundle-Description>
 						<!-- bundle dependencies -->
-						<Export-Package>com.rosetta.demo.services.*</Export-Package>
+						<Export-Package>com.rosetta.demo.search.*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -73,6 +73,24 @@
 			<version>5.4.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+            <groupId>com.day.cq</groupId>
+            <artifactId>cq-search</artifactId>
+            <version>5.5.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.dam</groupId>
+            <artifactId>cq-dam-api</artifactId>
+            <version>5.5.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.dam</groupId>
+            <artifactId>cq-dam-handler</artifactId>
+            <version>5.5.0</version>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>rosetta-demo-common</artifactId>
